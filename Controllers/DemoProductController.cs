@@ -1,15 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
-using ajay_chouhan.Model;
-using ajay_chouhan.Data;
+using Ajay_Chouhan.Model;
+using Ajay_Chouhan.Data;
+using Ajay_Chouhan.Filter;
 
-namespace ajay_chouhan
+namespace Ajay_Chouhan
 {
     [Route("api/[controller]")]
     public class DemoProductController : ControllerBase
     {
-        private readonly ajay_chouhanContext _context;
+        private readonly Ajay_ChouhanContext _context;
 
-        public DemoProductController(ajay_chouhanContext context)
+        public DemoProductController(Ajay_ChouhanContext context)
         {
             _context = context;
         }
@@ -23,10 +24,12 @@ namespace ajay_chouhan
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get([FromQuery] string filters)
         {
-            var entityData = _context.DemoProduct;
-            return Ok(entityData);
+            var filterCriteria = JsonHelper.Deserialize<List<FilterCriteria>>(filters);
+            var query = _context.Country.AsQueryable();
+            var result = FilterService<DemoProduct>.ApplyFilter(query, filterCriteria);
+            return Ok(result);
         }
 
         [HttpGet]
