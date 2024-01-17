@@ -1,6 +1,6 @@
 using System;
 
-namespace ajay_chouhan.Filter
+namespace Ajay_Chouhan.Filter
 {
     public class FilterCriteria
     {
