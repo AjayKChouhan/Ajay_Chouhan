@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace ajay_chouhan.Model
+namespace Ajay_Chouhan.Model
 {
     public class Product
     {
