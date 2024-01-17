@@ -1,4 +1,4 @@
-namespace ajay_chouhan.Model
+namespace Ajay_Chouhan.Model
 {
     internal class WithManyAttribute : Attribute
     {
