@@ -1,16 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
-using Ajay_Chouhan.Model;
-using Ajay_Chouhan.Data;
-using Ajay_Chouhan.Filter;
+using Aja_Chouhan.Model;
+using Aja_Chouhan.Data;
+using Aja_Chouhan.Filter;
 
-namespace Ajay_Chouhan
+namespace Aja_Chouhan
 {
     [Route("api/[controller]")]
     public class CategoryController : ControllerBase
     {
-        private readonly Ajay_ChouhanContext _context;
+        private readonly Aja_ChouhanContext _context;
 
-        public CategoryController(Ajay_ChouhanContext context)
+        public CategoryController(Aja_ChouhanContext context)
         {
             _context = context;
         }
