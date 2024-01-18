@@ -1,4 +1,4 @@
-
+using Aja_Chouhan.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
+builder.Services.AddTransient<Aja_ChouhanContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
