@@ -1,7 +1,7 @@
 using System;
 using System.Text.Json;
 
-namespace Aja_Chouhan.Filter
+namespace Ajay_Chouhan.Filter
 {
     public static class JsonHelper
     {
